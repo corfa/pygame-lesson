@@ -6,8 +6,8 @@ from labyrinth.characters.character import Character
 
 class Enemy(Character):
     def __init__(self, config: Config,
-                 x_position: int = 7,
-                 y_position: int = 7) -> None:
+                 x_position: int,
+                 y_position: int) -> None:
 
         super().__init__(config, x_position, y_position, color=(255, 0, 0))
 

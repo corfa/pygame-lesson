@@ -16,9 +16,17 @@ class Game:
         pygame.display.set_caption(self.game_config.lable)
         self.clock = pygame.time.Clock()
         self.running = True
-        self.player = Player(config=self.game_config)
-        self.enemy = Enemy(config=self.game_config)
+        self.player = Player(config=self.game_config, x_position=1, y_position=1)
+        self.enemy = Enemy(config=self.game_config, x_position=7, y_position=7)
         self.maze = Maze(config=self.game_config)
+
+    def run(self) -> None:
+        while self.running:
+            self.handle_events()
+            self.update_game()
+            self.draw_game()
+            self.clock.tick(self.game_config.FPS)
+        pygame.quit()
 
     def handle_events(self) -> None:
         for event in pygame.event.get():
@@ -45,11 +53,3 @@ class Game:
         self.player.draw(self.screen)
         self.enemy.draw(self.screen)
         pygame.display.flip()
-
-    def run(self) -> None:
-        while self.running:
-            self.handle_events()
-            self.update_game()
-            self.draw_game()
-            self.clock.tick(self.game_config.FPS)
-        pygame.quit()

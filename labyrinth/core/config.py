@@ -10,8 +10,8 @@ class Config:
     height: int = 600
     tile_size: int = 40
 
-    color_white: tuple = (255, 255, 255)
-    color_black: tuple = (0, 0, 0)
+    color_white: tuple[int, int, int] = (255, 255, 255)
+    color_black: tuple[int, int, int] = (0, 0, 0)
 
 
 config_game = Config()

@@ -8,7 +8,7 @@ class Character:
     def __init__(self, config: Config,
                  x_position: int,
                  y_position: int,
-                 color: tuple = (0, 255, 0)):
+                 color: tuple[int, int, int]):
         self.x: int = x_position
         self.y: int = y_position
         self.game_config: Config = config
